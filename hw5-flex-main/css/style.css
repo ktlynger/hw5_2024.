@@ -1,0 +1,170 @@
+@keyframes logo-animation {
+    0% {width: 25px; opacity: 0;}
+    100% {width: 475px; opacity: 1;}
+}
+
+#logo {
+    animation-name: logo-animation;
+    animation-duration: 5s;
+}
+
+body {
+    font-family: "Poppins", sans-serif; 
+    background-image: url('/images/concrete_seamless.png');
+    background-color: #f1f1f1;
+}
+
+@media screen and (min-width: 720px) {
+
+/* The code below changes the header and class .nav-links 
+to flex, arranges the flex items vertically 
+and aligns the items to center */
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+}
+
+/* The code below makes the text stay blue even if you click on that site */
+.nav_item a:hover, a:focus{
+    color: #0000FF;
+  }
+
+  /* The code below sets the following css changes for 
+  direct children of header */
+
+.card > header {
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius:  50px 50px 0px 0px;
+}
+
+
+/* NOTE: there is a background color of white 
+with the rounded corners but come back if time */
+
+/* Steps 7 and 8: matching to the photo given
+to do this needed to set flex-direction to row and center items */
+
+.card {
+    flex-basis: 450px;
+    border-radius: 50px 50px 0px 0px;
+}
+
+.pricing {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+/* styles images in gallery class */
+.gallery img {
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+ 
+/* sets the gallery to be flex 
+which makes the formating match the photo given*/
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+}
+
+@media screen and (min-width: 900px) {
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* supposed to make the links go to the right using flex
+something is going wrong here though */
+
+.nav_links {
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+/* editing pricing and card to match example. 
+Note: Pricing already is matching which is why its not below. */
+
+/* flex-basis makes all elements 
+with the class card have a width of 274 px */
+
+.card {
+    flex-basis: 275px;
+}
+
+
+/* Attempts to make the header stick but don't see it happening
+but thought this would work. COME BACK IF TIME */
+
+body > header {
+    position: sticky;
+    top: 0px;
+}
+
+/* user prefers reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    #logo{
+        animation:none;
+    }
+}
+
+@media print {
+
+    /* change font and backup font and got rid of background image */
+    
+    body{
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+
+    nav {
+        width: 100%
+    }
+
+    .nav_links {
+        flex-direction: row;
+        justify-content: space-around
+    }
+
+    /* line elements along bottom */
+    .pricing {
+        flex-wrap: nowrap;
+        align-items: flex-end;
+    }
+
+    .card{
+        border: 2px solid #45ADDD;
+        flex-basis: 325 px;
+    }
+
+    .gallery {
+        display: none;
+    
+    .card li:nth-child(2)::after{
+        content: "\1F44D"
+    }
+
+    }
+    }
+}
